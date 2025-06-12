@@ -99,11 +99,12 @@ public class Scene1 extends JPanel {
         for (Explosion explosion : explosions) {
             if (explosion.isVisible()) {
                 g.drawImage(explosion.getImage(), explosion.getX(), explosion.getY(), this);
-                toRemove.add(explosion);
                 explosion.visibleCountDown();
+            } else {
+                toRemove.add(explosion);
             }
         }
-//        explosions.removeAll(toRemove);
+        explosions.removeAll(toRemove);
     }
 
 
